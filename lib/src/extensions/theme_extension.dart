@@ -5,7 +5,6 @@ extension ThemeExtension on ThemeData {
     if (extensions.containsKey(T)) {
       return extensions[T] as T;
     }
-
     return null;
   }
 }

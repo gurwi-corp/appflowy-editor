@@ -22,7 +22,6 @@ class TextNodeParser extends NodeParser {
     if (children != null && children.isNotEmpty) {
       markdown += children;
     }
-
     return markdown;
   }
 }

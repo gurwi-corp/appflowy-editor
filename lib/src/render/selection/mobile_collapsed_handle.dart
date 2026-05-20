@@ -85,7 +85,6 @@ class _IOSCollapsedHandle extends StatelessWidget {
       rect.width + widthExtend,
       rect.height + heightExtend,
     );
-
     return Positioned.fromRect(
       rect: adjustedRect,
       child: CompositedTransformFollower(
@@ -149,7 +148,6 @@ class _AndroidCollapsedHandle extends StatelessWidget {
       rect.width + widthExtend,
       rect.height + heightExtend,
     );
-
     return Positioned.fromRect(
       rect: adjustedRect,
       child: CompositedTransformFollower(

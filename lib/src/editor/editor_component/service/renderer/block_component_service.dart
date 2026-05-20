@@ -90,7 +90,6 @@ abstract class BlockComponentRendererService {
     if (builder is BlockComponentSelectable) {
       return builder as BlockComponentSelectable;
     }
-
     return null;
   }
 

@@ -27,7 +27,6 @@ class BlockComponentContainer extends StatelessWidget {
         builder: (_, __, ___) {
           AppFlowyEditorLog.editor
               .debug('node is rebuilding...: type: ${node.type} ');
-
           return CompositedTransformTarget(
             link: node.layerLink,
             child: builder(context),

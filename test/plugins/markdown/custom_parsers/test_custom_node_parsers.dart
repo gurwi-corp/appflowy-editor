@@ -11,7 +11,6 @@ class TestCustomInlineSyntaxes extends md.InlineSyntax {
       "page_id":"${match.group(0)}"
     }''';
     parser.addNode(el);
-
     return true;
   }
 }

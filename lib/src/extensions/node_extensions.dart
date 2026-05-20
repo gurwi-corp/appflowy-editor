@@ -19,7 +19,6 @@ extension NodeExtensions on Node {
       level++;
       parent = parent.parent;
     }
-
     return level;
   }
 
@@ -34,10 +33,8 @@ extension NodeExtensions on Node {
   Rect get rect {
     if (renderBox != null) {
       final boxOffset = renderBox!.localToGlobal(Offset.zero);
-
       return boxOffset & renderBox!.size;
     }
-
     return Rect.zero;
   }
 
@@ -93,10 +90,8 @@ extension NodeExtensions on Node {
       if (test(parent)) {
         return parent;
       }
-
       return parent.previousNodeWhere(test);
     }
-
     return null;
   }
 
@@ -114,7 +109,6 @@ extension NodeExtensions on Node {
         return child;
       }
     }
-
     return null;
   }
 
@@ -137,10 +131,8 @@ extension NodeExtensions on Node {
       if (test(next)) {
         return next;
       }
-
       return next.findDownward(test);
     }
-
     return null;
   }
 
@@ -172,7 +164,6 @@ extension NodeExtensions on Node {
       }
       parent = parent.parent;
     }
-
     return false;
   }
 
@@ -181,7 +172,6 @@ extension NodeExtensions on Node {
       return this;
     }
     final parent = this.parent;
-
     return parent?.findParent(test);
   }
 }
@@ -208,7 +198,7 @@ extension NodesExtensions<T extends Node> on List<T> {
     }
 
     selection = selection.normalized;
-    final nodes = normalized;
+    final nodes = this.normalized;
 
     if (nodes.length == 1) {
       return nodes.first.allSatisfyInSelection(selection, test);

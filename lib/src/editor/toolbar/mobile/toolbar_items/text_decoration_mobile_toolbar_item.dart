@@ -11,7 +11,6 @@ final textDecorationMobileToolbarItem = MobileToolbarItem.withMenu(
     if (selection == null) {
       return const SizedBox.shrink();
     }
-
     return _TextDecorationMenu(editorState, selection);
   },
 );
@@ -52,7 +51,6 @@ class _TextDecorationMenuState extends State<_TextDecorationMenu> {
       name: AppFlowyRichTextKeys.strikethrough,
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     final style = MobileToolbarTheme.of(context);

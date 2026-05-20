@@ -126,6 +126,5 @@ CommandShortcutEventHandler _moveCursorDownSelectCommandHandler =
     selection.copyWith(end: end),
     reason: SelectionUpdateReason.uiEvent,
   );
-
   return KeyEventResult.handled;
 };

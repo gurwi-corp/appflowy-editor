@@ -80,7 +80,6 @@ class AutoCompleteEditor extends StatelessWidget {
                 if (text.toLowerCase().endsWith('hello')) {
                   return ' world';
                 }
-
                 return null;
               },
             ),

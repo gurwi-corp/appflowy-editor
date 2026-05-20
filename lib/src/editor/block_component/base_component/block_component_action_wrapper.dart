@@ -39,9 +39,7 @@ class _BlockComponentActionWrapperState
   bool isDisposed = false;
 
   bool _alwaysShowActions = false;
-
   bool get alwaysShowActions => _alwaysShowActions;
-
   @override
   set alwaysShowActions(bool alwaysShowActions) {
     if (isDisposed) {

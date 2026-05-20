@@ -31,7 +31,6 @@ Future<void> onInsert(
 
     if (execution) {
       editorState.sliceUpcomingAttributes = false;
-
       return;
     }
   }

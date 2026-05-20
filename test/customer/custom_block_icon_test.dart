@@ -69,7 +69,6 @@ class CustomBlockIcon extends StatelessWidget {
     };
 
     final editorState = EditorState(document: document);
-
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(

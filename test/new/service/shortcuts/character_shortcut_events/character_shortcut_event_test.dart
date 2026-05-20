@@ -35,7 +35,6 @@ void main() async {
       var handlerCalled = false;
       Future<bool> handler(EditorState state) async {
         handlerCalled = true;
-
         return true;
       }
 

@@ -63,7 +63,6 @@ class DeltaHTMLEncoder extends Converter<Delta, List<dom.Node>> {
     };
 
     final tag = keyToTag[attributes.keys.first];
-
     return dom.Element.tag(tag)..append(domText);
   }
 
@@ -82,7 +81,6 @@ class DeltaHTMLEncoder extends Converter<Delta, List<dom.Node>> {
       span.attributes['style'] = cssString;
     }
     span.append(dom.Text(text));
-
     return span;
   }
 

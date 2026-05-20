@@ -36,18 +36,14 @@ class DeltaTextInputService extends TextInputService with DeltaTextInputClient {
       switch (delta) {
         case TextEditingDeltaInsertion _:
           if (!(await onInsert(delta))) willApply = false;
-
         case TextEditingDeltaDeletion _:
           if (!(await onDelete(delta))) willApply = false;
-
         case TextEditingDeltaReplacement _:
           if (!(await onReplace(delta))) willApply = false;
-
         case TextEditingDeltaNonTextUpdate _:
           if (!(await onNonTextUpdate(delta))) willApply = false;
       }
     }
-
     return willApply;
   }
 
@@ -170,6 +166,12 @@ class DeltaTextInputService extends TextInputService with DeltaTextInputClient {
   @override
   void insertContent(KeyboardInsertedContent content) {}
 
+  // Added by Clatri fork: Flutter 3.44.0 added TextInputClient.onFocusReceived.
+  // DeltaTextInputClient reaches TextInputClient via `implements`, so the
+  // default body does not propagate and a concrete impl is required here.
+  @override
+  bool onFocusReceived() => false;
+
   void _updateComposing(TextEditingDelta delta) {
     if (delta is! TextEditingDeltaNonTextUpdate) {
       if (composingTextRange != null &&
@@ -288,7 +290,6 @@ extension on String {
     if (shiftAmount > length) {
       return '';
     }
-
     return substring(shiftAmount);
   }
 }

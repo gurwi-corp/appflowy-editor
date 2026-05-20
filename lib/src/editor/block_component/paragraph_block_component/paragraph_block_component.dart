@@ -46,7 +46,6 @@ class ParagraphBlockComponentBuilder extends BlockComponentBuilder {
   @override
   BlockComponentWidget build(BlockComponentContext blockComponentContext) {
     final node = blockComponentContext.node;
-
     return ParagraphBlockComponentWidget(
       node: node,
       key: node.key,

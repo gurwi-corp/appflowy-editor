@@ -50,7 +50,6 @@ CharacterShortcutEvent formatNumberToNumberedList = CharacterShortcutEvent(
       final match = _numberRegex.firstMatch(text)!;
       final matchText = match.group(0)!;
       final number = matchText.substring(0, matchText.length - 1);
-
       return [
         node.copyWith(
           type: NumberedListBlockKeys.type,

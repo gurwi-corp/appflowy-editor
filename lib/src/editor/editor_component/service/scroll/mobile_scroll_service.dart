@@ -26,7 +26,6 @@ class _MobileScrollServiceState extends State<MobileScrollService>
   @override
   double? get onePageHeight {
     final renderBox = context.findRenderObject() as RenderBox?;
-
     return renderBox?.size.height;
   }
 
@@ -42,10 +41,8 @@ class _MobileScrollServiceState extends State<MobileScrollService>
   int? get page {
     if (onePageHeight != null) {
       final scrollExtent = maxScrollExtent - minScrollExtent;
-
       return (scrollExtent / onePageHeight!).ceil();
     }
-
     return null;
   }
 

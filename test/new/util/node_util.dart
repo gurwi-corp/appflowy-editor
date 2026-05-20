@@ -21,7 +21,6 @@ extension NodeExtension on Node {
         node.updateAttributes({
           'delta': builder0(index).toJson(),
         });
-
         return node;
       },
     );

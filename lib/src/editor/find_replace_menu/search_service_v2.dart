@@ -18,18 +18,14 @@ class SearchServiceV2 {
   SearchAlgorithm searchAlgorithm = BoyerMoore();
   String queriedPattern = '';
   bool _caseSensitive = false;
-
   bool get caseSensitive => _caseSensitive;
-
   set caseSensitive(bool value) {
     _caseSensitive = value;
     findAndHighlight(queriedPattern);
   }
 
   int _selectedIndex = 0;
-
   int get selectedIndex => _selectedIndex;
-
   set selectedIndex(int index) {
     _prevSelectedIndex = _selectedIndex;
     _selectedIndex = matchedPositions.value.isEmpty
@@ -101,7 +97,6 @@ class SearchServiceV2 {
         _getMatchedPositions(pattern: pattern, nodes: node.children),
       );
     }
-
     return result;
   }
 

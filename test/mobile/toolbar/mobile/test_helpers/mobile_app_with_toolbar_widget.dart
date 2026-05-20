@@ -23,7 +23,6 @@ class MobileAppWithToolbarWidget extends StatelessWidget {
           quoteMobileToolbarItem,
           codeMobileToolbarItem,
         ];
-
     return MaterialApp(
       home: Column(
         children: [

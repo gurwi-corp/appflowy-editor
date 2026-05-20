@@ -23,7 +23,6 @@ class DocumentHTMLEncoder extends Converter<Document, String> {
         );
       }
     }
-
     return buffer.toString();
   }
 }

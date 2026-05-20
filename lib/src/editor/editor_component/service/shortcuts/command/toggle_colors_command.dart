@@ -55,7 +55,6 @@ KeyEventResult _toggleHighlight(
 }) {
   if (PlatformExtension.isMobile) {
     assert(false, 'toggle highlight is not supported on mobile platform.');
-
     return KeyEventResult.ignored;
   }
 

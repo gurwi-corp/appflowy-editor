@@ -30,7 +30,6 @@ Future<void> onFloatingCursorUpdate(
         AppFlowyEditorLog.input.debug(
           'onFloatingCursorUpdateStart: context is null',
         );
-
         return;
       }
 
@@ -52,7 +51,6 @@ Future<void> onFloatingCursorUpdate(
         MobileSelectionDragMode.cursor,
       );
       break;
-
     case FloatingCursorDragState.Update:
       final collapsedCursor = HandleType.collapsed.key;
       final context = collapsedCursor.currentContext;
@@ -60,7 +58,6 @@ Future<void> onFloatingCursorUpdate(
         AppFlowyEditorLog.input.debug(
           'onFloatingCursorUpdateUpdate: context is null',
         );
-
         return;
       } else {
         AppFlowyEditorLog.input.debug(
@@ -83,7 +80,6 @@ Future<void> onFloatingCursorUpdate(
         MobileSelectionDragMode.cursor,
       );
       break;
-
     case FloatingCursorDragState.End:
       AppFlowyEditorLog.input.debug(
         'onFloatingCursorUpdateEnd: ${point.offset}',

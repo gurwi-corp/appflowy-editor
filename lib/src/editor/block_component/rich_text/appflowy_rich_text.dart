@@ -248,7 +248,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
       widget.cursorWidth,
       cursorHeight ?? 16.0,
     );
-
     return rect;
   }
 
@@ -257,7 +256,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
     final offset = _renderParagraph?.globalToLocal(start) ?? Offset.zero;
     final baseOffset =
         _renderParagraph?.getPositionForOffset(offset).offset ?? -1;
-
     return Position(path: widget.node.path, offset: baseOffset);
   }
 
@@ -286,7 +284,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         _renderParagraph?.getWordBoundary(textPosition) ?? TextRange.empty;
     final start = Position(path: widget.node.path, offset: textRange.start);
     final end = Position(path: widget.node.path, offset: textRange.end);
-
     return Selection(start: start, end: end);
   }
 
@@ -297,7 +294,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         _renderParagraph?.getWordBoundary(textPosition) ?? TextRange.empty;
     final start = Position(path: widget.node.path, offset: textRange.start);
     final end = Position(path: widget.node.path, offset: textRange.end);
-
     return Selection(start: start, end: end);
   }
 
@@ -341,12 +337,10 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         height = paragraph?.getFullHeightForCaret(textPosition) ?? height;
         width = 2;
       }
-
       return [
         Rect.fromLTWH(position.dx, position.dy, width, height),
       ];
     }
-
     return rects;
   }
 
@@ -366,7 +360,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         _renderParagraph?.getPositionForOffset(localStart).offset ?? -1;
     final extentOffset =
         _renderParagraph?.getPositionForOffset(localEnd).offset ?? -1;
-
     return Selection.single(
       path: widget.node.path,
       startOffset: baseOffset,
@@ -397,7 +390,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
     if (delta != null && delta.isNotEmpty) {
       textSpan = textSpan.copyWith(text: '');
     }
-
     return RichText(
       key: placeholderTextKey,
       textHeightBehavior: TextHeightBehavior(
@@ -412,6 +404,7 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
       textScaler: TextScaler.linear(
         widget.editorState.editorStyle.textScaleFactor,
       ),
+      overflow: TextOverflow.ellipsis,
     );
   }
 
@@ -422,7 +415,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
       textSpan = widget.textSpanDecorator!(textSpan);
     }
     textSpan = adjustTextSpan(textSpan);
-
     return RichText(
       key: textKey,
       textAlign: widget.textAlign ?? TextAlign.start,
@@ -442,7 +434,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
 
   List<Widget> _buildRichTextOverlay(BuildContext context) {
     if (textKey.currentContext == null) return [];
-
     return textSpanOverlayBuilder?.call(
           context,
           widget.node,
@@ -468,7 +459,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
       textSpan = widget.textSpanDecorator!(textSpan);
     }
     textSpan = adjustTextSpan(textSpan);
-
     return ValueListenableBuilder(
       valueListenable: widget.editorState.selectionNotifier,
       builder: (_, __, ___) {
@@ -498,7 +488,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
             ),
           ],
         );
-
         return RichText(
           textAlign: widget.textAlign ?? TextAlign.start,
           textHeightBehavior: TextHeightBehavior(
@@ -535,7 +524,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
             fontSize = max(fontSize, style.fontSize!);
           }
         }
-
         return true;
       });
       if (height == 0.0 || fontSize == 0.0) {
@@ -548,7 +536,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         ),
       );
     }
-
     return textSpan;
   }
 
@@ -642,7 +629,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
       );
       offset += textInsert.length;
     }
-
     return TextSpan(
       children: textSpans,
     );
@@ -697,7 +683,6 @@ class _AppFlowyRichTextState extends State<AppFlowyRichText>
         );
       }
     }
-
     return textSelection;
   }
 }
@@ -718,21 +703,18 @@ extension AppFlowyRichTextAttributes on Attributes {
 
   Color? get color {
     final textColor = this[AppFlowyRichTextKeys.textColor] as String?;
-
     return textColor?.tryToColor();
   }
 
   Color? get backgroundColor {
     final highlightColor =
         this[AppFlowyRichTextKeys.backgroundColor] as String?;
-
     return highlightColor?.tryToColor();
   }
 
   Color? get findBackgroundColor {
     final findBackgroundColor =
         this[AppFlowyRichTextKeys.findBackgroundColor] as String?;
-
     return findBackgroundColor?.tryToColor();
   }
 
@@ -740,7 +722,6 @@ extension AppFlowyRichTextAttributes on Attributes {
     if (this[AppFlowyRichTextKeys.href] is String) {
       return this[AppFlowyRichTextKeys.href];
     }
-
     return null;
   }
 
@@ -748,7 +729,6 @@ extension AppFlowyRichTextAttributes on Attributes {
     if (this[AppFlowyRichTextKeys.fontFamily] is String) {
       return this[AppFlowyRichTextKeys.fontFamily];
     }
-
     return null;
   }
 
@@ -756,7 +736,6 @@ extension AppFlowyRichTextAttributes on Attributes {
     if (this[AppFlowyRichTextKeys.fontSize] is double) {
       return this[AppFlowyRichTextKeys.fontSize];
     }
-
     return null;
   }
 

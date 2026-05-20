@@ -20,7 +20,6 @@ ToolbarItem buildTextColorItem({
 
         return delta.everyAttributes((attr) {
           textColorHex = attr[AppFlowyRichTextKeys.textColor];
-
           return (textColorHex != null);
         });
       });
@@ -44,7 +43,6 @@ ToolbarItem buildTextColorItem({
                   },
                 );
               }
-
               return true;
             },
           );

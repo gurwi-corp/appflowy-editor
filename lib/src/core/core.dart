@@ -1,4 +1,6 @@
 export 'document/attributes.dart';
+export 'document/deprecated/document.dart';
+export 'document/deprecated/node.dart';
 export 'document/diff.dart';
 export 'document/document.dart';
 export 'document/node.dart';

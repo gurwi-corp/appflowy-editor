@@ -91,7 +91,6 @@ class _ResizableImageState extends State<ResizableImage> {
                   loadingProgress.expectedTotalBytes) {
             return child;
           }
-
           return _buildLoading(context);
         },
         errorBuilder: (context, error, stackTrace) => _buildError(context),
@@ -102,7 +101,6 @@ class _ResizableImageState extends State<ResizableImage> {
       _cacheImage ??= Image.file(File(src));
       child = _cacheImage!;
     }
-
     return Stack(
       children: [
         child,

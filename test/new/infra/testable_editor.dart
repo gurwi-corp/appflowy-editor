@@ -31,13 +31,11 @@ class TestableEditor {
   late EditorState _editorState;
 
   Document get document => _editorState.document;
-
   int get documentRootLen => document.root.children.length;
 
   Selection? get selection => _editorState.selection;
 
   MockIMEInput? _ime;
-
   MockIMEInput get ime {
     return _ime ??= MockIMEInput(
       editorState: editorState,
@@ -168,7 +166,6 @@ class TestableEditor {
       ),
     );
     await tester.pump();
-
     return this;
   }
 
@@ -311,7 +308,6 @@ class MockIMEInput {
   TextInputService get imeInput {
     final keyboardService = tester.state(find.byType(KeyboardServiceWidget))
         as KeyboardServiceWidgetState;
-
     return keyboardService.textInputService;
   }
 

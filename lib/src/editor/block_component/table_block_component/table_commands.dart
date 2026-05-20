@@ -100,7 +100,6 @@ CommandShortcutEventHandler _enterInTableCellHandler = (editorState) {
       );
     }
   }
-
   return KeyEventResult.handled;
 };
 
@@ -119,10 +118,8 @@ CommandShortcutEventHandler _leftInTableCellHandler = (editorState) {
         ),
       );
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -140,10 +137,8 @@ CommandShortcutEventHandler _rightInTableCellHandler = (editorState) {
         ),
       );
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -161,10 +156,8 @@ CommandShortcutEventHandler _upInTableCellHandler = (editorState) {
         Selection.single(path: target.path, startOffset: off),
       );
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -182,10 +175,8 @@ CommandShortcutEventHandler _downInTableCellHandler = (editorState) {
         Selection.single(path: target.path, startOffset: off),
       );
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -203,10 +194,8 @@ CommandShortcutEventHandler _tabInTableCellHandler = (editorState) {
         );
       }
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -224,10 +213,8 @@ CommandShortcutEventHandler _shiftTabInTableCellHandler = (editorState) {
         );
       }
     }
-
     return KeyEventResult.handled;
   }
-
   return KeyEventResult.ignored;
 };
 
@@ -256,7 +243,6 @@ Iterable<Node> _inTableNodes(EditorState editorState) {
     return [];
   }
   final nodes = editorState.getNodesInSelection(selection);
-
   return nodes.where(
     (node) => node.parent?.type.contains(TableBlockKeys.type) ?? false,
   );

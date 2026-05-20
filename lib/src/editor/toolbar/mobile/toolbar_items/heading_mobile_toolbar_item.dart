@@ -11,7 +11,6 @@ final headingMobileToolbarItem = MobileToolbarItem.withMenu(
     if (selection == null) {
       return const SizedBox.shrink();
     }
-
     return _HeadingMenu(
       selection,
       editorState,

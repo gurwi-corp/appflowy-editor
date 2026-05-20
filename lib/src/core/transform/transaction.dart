@@ -22,7 +22,6 @@ class Transaction {
       compose();
       markNeedsComposing = false;
     }
-
     return _operations;
   }
 
@@ -145,7 +144,6 @@ class Transaction {
     if (beforeSelection != null) {
       json['before_selection'] = beforeSelection!.toJson();
     }
-
     return json;
   }
 
@@ -167,7 +165,6 @@ class Transaction {
           op.inverted.compose(last.inverted),
         );
         operations[_operations.length - 1] = newOp;
-
         return;
       }
     }
@@ -211,14 +208,12 @@ extension TextTransaction on Transaction {
     final delta = node.delta;
     if (delta == null) {
       assert(false, 'The node must have a delta.');
-
       return;
     }
 
     if (index < 0 || index > delta.length) {
       AppFlowyEditorLog.editor
           .info('The index($index) is out of range or negative.');
-
       return;
     }
 
@@ -249,7 +244,6 @@ extension TextTransaction on Transaction {
     final delta = node.delta;
     if (delta == null) {
       assert(false, 'The node must have a delta.');
-
       return;
     }
 
@@ -278,7 +272,6 @@ extension TextTransaction on Transaction {
     final delta = node.delta;
     if (delta == null) {
       assert(false, 'The node must have a delta.');
-
       return;
     }
 
@@ -423,7 +416,6 @@ extension TextTransaction on Transaction {
   void compose() {
     if (_composeMap.isEmpty) {
       markNeedsComposing = false;
-
       return;
     }
     for (final entry in _composeMap.entries) {
@@ -468,7 +460,6 @@ extension TextTransaction on Transaction {
         selection.endIndex - selection.startIndex,
         texts.first,
       );
-
       return;
     }
 

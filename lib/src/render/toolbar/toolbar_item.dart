@@ -68,7 +68,6 @@ class ToolbarItem {
     if (identical(this, other)) {
       return true;
     }
-
     return id == other.id;
   }
 
@@ -94,7 +93,6 @@ bool onlyShowInSingleSelectionAndTextType(EditorState editorState) {
   if (node == null) {
     return false;
   }
-
   return node.delta != null && toolbarItemWhiteList.contains(node.type);
 }
 
@@ -104,7 +102,6 @@ bool onlyShowInTextType(EditorState editorState) {
     return false;
   }
   final nodes = editorState.getNodesInSelection(selection);
-
   return nodes.every(
     (node) => node.delta != null && toolbarItemWhiteList.contains(node.type),
   );

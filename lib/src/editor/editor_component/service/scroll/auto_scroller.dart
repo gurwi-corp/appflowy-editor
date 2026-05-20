@@ -45,14 +45,7 @@ class AutoScroller extends EdgeDraggingAutoScroller
     lastDirection = direction;
     if (direction != null && direction == AxisDirection.up) {
       return startAutoScrollIfNecessary(
-        Rect.fromLTWH(offset.dx, offset.dy - edgeOffset, 1, edgeOffset),
-        duration: duration,
-      );
-    }
-
-    if (direction != null && direction == AxisDirection.down) {
-      return startAutoScrollIfNecessary(
-        Rect.fromLTWH(offset.dx, offset.dy, 1, edgeOffset),
+        offset & Size(1, edgeOffset),
         duration: duration,
       );
     }

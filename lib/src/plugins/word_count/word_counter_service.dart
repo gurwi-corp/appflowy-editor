@@ -33,11 +33,9 @@ class Counters {
         _charCount = charCount;
 
   final int _wordCount;
-
   int get wordCount => _wordCount;
 
   final int _charCount;
-
   int get charCount => _charCount;
 
   @override
@@ -197,7 +195,6 @@ class WordCountService with ChangeNotifier {
       }
 
       _selectionCounters = const Counters();
-
       return notifyListeners();
     }
 

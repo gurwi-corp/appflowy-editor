@@ -18,7 +18,6 @@ final CommandShortcutEvent pageUpCommand = CommandShortcutEvent(
 CommandShortcutEventHandler _pageUpCommandHandler = (editorState) {
   if (PlatformExtension.isMobile) {
     assert(false, 'pageUpCommand is not supported on mobile platform.');
-
     return KeyEventResult.ignored;
   }
   final scrollService = editorState.service.scrollService;
@@ -35,6 +34,5 @@ CommandShortcutEventHandler _pageUpCommandHandler = (editorState) {
     dy - scrollHeight,
     duration: const Duration(milliseconds: 150),
   );
-
   return KeyEventResult.handled;
 };

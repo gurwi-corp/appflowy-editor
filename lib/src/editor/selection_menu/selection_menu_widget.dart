@@ -52,7 +52,6 @@ class SelectionMenuItem {
   ///
   /// The keywords are used to quickly retrieve items.
   final List<String> keywords;
-
   List<String> get allKeywords => keywords + [name.toLowerCase()];
   late final SelectionMenuItemHandler handler;
 
@@ -308,9 +307,7 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
   int _searchCounter = 0;
 
   String _keyword = '';
-
   String get keyword => _keyword;
-
   set keyword(String newKeyword) {
     _keyword = newKeyword;
 
@@ -324,7 +321,6 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
             if (value) {
               maxKeywordLength = max(maxKeywordLength, keyword.length);
             }
-
             return value;
           }),
         )
@@ -435,7 +431,6 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
           ),
         );
       }
-
       return ConstrainedBox(
         constraints: const BoxConstraints(
           maxHeight: 300,
@@ -485,7 +480,6 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
         );
         itemWidgets = [];
       }
-
       return Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: columns,
@@ -534,12 +528,10 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
       if (0 <= _selectedIndex && _selectedIndex < _showingItems.length) {
         _showingItems[_selectedIndex]
             .handler(widget.editorState, widget.menuService, context);
-
         return KeyEventResult.handled;
       }
     } else if (event.logicalKey == LogicalKeyboardKey.escape) {
       widget.onExit();
-
       return KeyEventResult.handled;
     } else if (event.logicalKey == LogicalKeyboardKey.backspace) {
       if (_searchCounter > 0) {
@@ -551,14 +543,12 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
         keyword = keyword.substring(0, keyword.length - 1);
       }
       _deleteLastCharacters();
-
       return KeyEventResult.handled;
     } else if (event.character != null &&
         !arrowKeys.contains(event.logicalKey) &&
         event.logicalKey != LogicalKeyboardKey.tab) {
       keyword += event.character!;
       _insertText(event.character!);
-
       return KeyEventResult.handled;
     }
 
@@ -612,10 +602,8 @@ class _SelectionMenuWidgetState extends State<SelectionMenuWidget> {
         _selectedIndex = newSelectedIndex.clamp(0, _showingItems.length - 1);
         _scrollToSelectedIndex();
       });
-
       return KeyEventResult.handled;
     }
-
     return KeyEventResult.ignored;
   }
 

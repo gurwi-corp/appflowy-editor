@@ -5,7 +5,6 @@ import 'package:appflowy_editor/appflowy_editor.dart';
 /// If the document is empty, it will create a new paragraph node.
 class AtLeastOneEditableNodeRule extends DocumentRule {
   const AtLeastOneEditableNodeRule();
-
   @override
   bool shouldApply({
     required EditorState editorState,
@@ -16,7 +15,6 @@ class AtLeastOneEditableNodeRule extends DocumentRule {
       return false;
     }
     final document = editorState.document;
-
     return document.root.children.isEmpty;
   }
 

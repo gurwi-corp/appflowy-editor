@@ -23,7 +23,6 @@ void main() async {
         transaction.add(op);
       }
       await editorState.apply(transaction, isRemote: true);
-
       return editorState.document;
     }
 

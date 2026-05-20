@@ -79,7 +79,6 @@ extension on TextEditingDeltaReplacement {
       replacedRange.end,
       '',
     );
-
     return TextEditingDeltaInsertion(
       oldText: text,
       textInserted: replacementText,

@@ -29,7 +29,6 @@ extension PlatformExtension on Platform {
     if (!kIsWeb) {
       return false;
     }
-
     return _webPlatform.contains('mac') == true;
   }
 
@@ -38,7 +37,6 @@ extension PlatformExtension on Platform {
     if (!kIsWeb) {
       return false;
     }
-
     return _webPlatform.contains('windows') == true;
   }
 
@@ -47,7 +45,6 @@ extension PlatformExtension on Platform {
     if (!kIsWeb) {
       return false;
     }
-
     return _webPlatform.contains('linux') == true;
   }
 

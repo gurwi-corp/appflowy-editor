@@ -17,7 +17,6 @@ final CommandShortcutEvent undoCommand = CommandShortcutEvent(
 
 CommandShortcutEventHandler _undoCommandHandler = (editorState) {
   editorState.undoManager.undo();
-
   return KeyEventResult.handled;
 };
 
@@ -37,6 +36,5 @@ final CommandShortcutEvent redoCommand = CommandShortcutEvent(
 
 CommandShortcutEventHandler _redoCommandHandler = (editorState) {
   editorState.undoManager.redo();
-
   return KeyEventResult.handled;
 };

@@ -32,7 +32,6 @@ void main() async {
       final node = editorState.getNodeAtPath([0]);
       final result = node!.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });
@@ -64,7 +63,6 @@ void main() async {
       final node = editorState.getNodeAtPath([0]);
       final result = node!.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });
@@ -97,7 +95,6 @@ void main() async {
       final node = editorState.getNodeAtPath([0]);
       final result = node!.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });
@@ -146,7 +143,6 @@ void main() async {
       final nodes = editorState.getNodesInSelection(selection);
       final result = nodes.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });
@@ -192,7 +188,6 @@ void main() async {
       final nodes = editorState.getNodesInSelection(selection);
       final result = nodes.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });

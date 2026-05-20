@@ -88,7 +88,6 @@ class OverlayEntry extends ChangeNotifier {
   /// set.
   bool get opaque => _opaque;
   bool _opaque;
-
   set opaque(bool value) {
     if (_opaque == value) return;
     _opaque = value;
@@ -111,7 +110,6 @@ class OverlayEntry extends ChangeNotifier {
   /// from subsequent routes will be handled properly when they complete.
   bool get maintainState => _maintainState;
   bool _maintainState;
-
   set maintainState(bool value) {
     if (_maintainState == value) return;
     _maintainState = value;
@@ -124,7 +122,6 @@ class OverlayEntry extends ChangeNotifier {
   /// The [OverlayEntry] notifies its listeners when this value changes.
   bool get mounted => _mounted;
   bool _mounted = false;
-
   void _updateMounted(bool value) {
     if (value == _mounted) {
       return;
@@ -323,10 +320,8 @@ class Overlay extends StatefulWidget {
 
         throw FlutterError.fromParts(information);
       }
-
       return true;
     }());
-
     return result;
   }
 
@@ -354,7 +349,6 @@ class OverlayState extends State<Overlay> with TickerProviderStateMixin {
     assert(above == null || below == null);
     if (below != null) return _entries.indexOf(below);
     if (above != null) return _entries.indexOf(above) + 1;
-
     return _entries.length;
   }
 
@@ -435,7 +429,6 @@ class OverlayState extends State<Overlay> with TickerProviderStateMixin {
               (newEntries?.contains(below) ?? true)),
       'The provided entry used for `below` must be present in the Overlay${newEntries != null ? ' and in the `newEntriesList`' : ''}.',
     );
-
     return true;
   }
 
@@ -520,10 +513,8 @@ class OverlayState extends State<Overlay> with TickerProviderStateMixin {
         }
         if (candidate.opaque) break;
       }
-
       return true;
     }());
-
     return result;
   }
 
@@ -562,7 +553,6 @@ class OverlayState extends State<Overlay> with TickerProviderStateMixin {
         );
       }
     }
-
     return _Theatre(
       skipCount: children.length - onstageCount,
       clipBehavior: widget.clipBehavior,
@@ -674,7 +664,6 @@ class _RenderTheatre extends RenderBox
 
   TextDirection get textDirection => _textDirection;
   TextDirection _textDirection;
-
   set textDirection(TextDirection value) {
     if (_textDirection == value) return;
     _textDirection = value;
@@ -683,7 +672,6 @@ class _RenderTheatre extends RenderBox
 
   int get skipCount => _skipCount;
   int _skipCount;
-
   set skipCount(int value) {
     if (_skipCount != value) {
       _skipCount = value;
@@ -696,7 +684,6 @@ class _RenderTheatre extends RenderBox
   /// Defaults to [Clip.hardEdge], and must not be null.
   Clip get clipBehavior => _clipBehavior;
   Clip _clipBehavior = Clip.hardEdge;
-
   set clipBehavior(Clip value) {
     if (value != _clipBehavior) {
       _clipBehavior = value;
@@ -716,7 +703,6 @@ class _RenderTheatre extends RenderBox
       child = childParentData.nextSibling;
       assert(child != null);
     }
-
     return child;
   }
 
@@ -777,7 +763,6 @@ class _RenderTheatre extends RenderBox
       }
       child = childParentData.nextSibling;
     }
-
     return result;
   }
 
@@ -787,7 +772,6 @@ class _RenderTheatre extends RenderBox
   @override
   Size computeDryLayout(BoxConstraints constraints) {
     assert(constraints.biggest.isFinite);
-
     return constraints.biggest;
   }
 
@@ -842,14 +826,12 @@ class _RenderTheatre extends RenderBox
         position: position,
         hitTest: (BoxHitTestResult result, Offset transformed) {
           assert(transformed == position - childParentData.offset);
-
           return child!.hitTest(result, position: transformed);
         },
       );
       if (isHit) return true;
       child = childParentData.previousSibling;
     }
-
     return false;
   }
 

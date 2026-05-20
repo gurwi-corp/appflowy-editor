@@ -33,10 +33,8 @@ class _IgnoreEditorSelectionGestureState
         final renderObject = context.findRenderObject();
         if (renderObject != null && renderObject is RenderBox) {
           final offset = renderObject.globalToLocal(details.globalPosition);
-
           return !renderObject.paintBounds.contains(offset);
         }
-
         return true;
       },
     );

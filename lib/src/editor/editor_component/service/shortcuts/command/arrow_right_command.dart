@@ -36,7 +36,6 @@ CommandShortcutEventHandler _arrowRightCommandHandler = (editorState) {
   } else {
     editorState.moveCursorBackward(SelectionMoveRange.character);
   }
-
   return KeyEventResult.handled;
 };
 
@@ -60,7 +59,6 @@ CommandShortcutEventHandler _moveCursorToEndCommandHandler = (editorState) {
   } else {
     editorState.moveCursorBackward(SelectionMoveRange.line);
   }
-
   return KeyEventResult.handled;
 };
 
@@ -125,7 +123,6 @@ CommandShortcutEventHandler _moveCursorToRightWordCommandHandler =
     }
     editorState.moveCursorBackward(SelectionMoveRange.word);
   }
-
   return KeyEventResult.handled;
 };
 
@@ -161,7 +158,6 @@ CommandShortcutEventHandler _moveCursorRightWordSelectCommandHandler =
     selection.copyWith(end: end),
     reason: SelectionUpdateReason.uiEvent,
   );
-
   return KeyEventResult.handled;
 };
 
@@ -192,7 +188,6 @@ CommandShortcutEventHandler _moveCursorRightSelectCommandHandler =
     selection.copyWith(end: end),
     reason: SelectionUpdateReason.uiEvent,
   );
-
   return KeyEventResult.handled;
 };
 
@@ -225,6 +220,5 @@ CommandShortcutEventHandler _moveCursorEndSelectCommandHandler = (editorState) {
     selection.copyWith(end: end),
     reason: SelectionUpdateReason.uiEvent,
   );
-
   return KeyEventResult.handled;
 };

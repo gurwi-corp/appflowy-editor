@@ -78,7 +78,6 @@ class ErrorBlockComponentBuilder extends BlockComponentBuilder {
   @override
   BlockComponentWidget build(BlockComponentContext blockComponentContext) {
     final node = blockComponentContext.node;
-
     return ErrorBlockComponentWidget(
       key: node.key,
       node: node,

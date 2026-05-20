@@ -62,7 +62,6 @@ void main() async {
 
       final result = after?.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });
@@ -96,7 +95,6 @@ void main() async {
       final after = editorState.getNodesInSelection(selection);
       final result = after.allSatisfyInSelection(selection, (delta) {
         final textInserts = delta.whereType<TextInsert>();
-
         return textInserts
             .every((element) => element.attributes?['bold'] == true);
       });

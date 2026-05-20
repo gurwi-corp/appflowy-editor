@@ -16,6 +16,5 @@ TextDirection? determineTextDirection(String text) {
       return TextDirection.ltr;
     }
   }
-
   return null;
 }

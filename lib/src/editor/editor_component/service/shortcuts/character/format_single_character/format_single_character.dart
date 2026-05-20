@@ -34,7 +34,6 @@ class CheckSingleFormatFormatResult {
 }) {
   if (character.length != 1) {
     AppFlowyEditorLog.input.debug('character length is not 1');
-
     return (false, null);
   }
 
@@ -42,7 +41,6 @@ class CheckSingleFormatFormatResult {
   // We should return false to let the IME handle it.
   if (!selection.isCollapsed || selection.end.offset < 2) {
     AppFlowyEditorLog.input.debug('selection is not valid');
-
     return (false, null);
   }
 
@@ -60,7 +58,6 @@ class CheckSingleFormatFormatResult {
     if (op.attributes?[AppFlowyRichTextKeys.code] == true) {
       return true;
     }
-
     return false;
   });
   int startIndex = 0;
@@ -72,7 +69,6 @@ class CheckSingleFormatFormatResult {
       if (index <= lastInlineCodeIndex) {
         return sum + op.length;
       }
-
       return sum;
     });
   }
@@ -150,7 +146,6 @@ bool handleFormatByWrappingWithSingleCharacter({
 
   if (!shouldApply || formatResult == null) {
     AppFlowyEditorLog.input.debug('format single character failed');
-
     return false;
   }
 
@@ -184,11 +179,9 @@ bool handleFormatByWrappingWithSingleCharacter({
     case FormatStyleByWrappingWithSingleChar.code:
       style = 'code';
       break;
-
     case FormatStyleByWrappingWithSingleChar.italic:
       style = 'italic';
       break;
-
     case FormatStyleByWrappingWithSingleChar.strikethrough:
       style = 'strikethrough';
       break;
@@ -214,6 +207,5 @@ bool handleFormatByWrappingWithSingleCharacter({
       ),
     );
   editorState.apply(format);
-
   return true;
 }

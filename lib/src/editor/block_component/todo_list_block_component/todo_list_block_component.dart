@@ -65,7 +65,6 @@ class TodoListBlockComponentBuilder extends BlockComponentBuilder {
   @override
   BlockComponentWidget build(BlockComponentContext blockComponentContext) {
     final node = blockComponentContext.node;
-
     return TodoListBlockComponentWidget(
       key: node.key,
       node: node,
@@ -268,7 +267,6 @@ class _TodoListBlockComponentWidgetState
     if (!checked) {
       return null;
     }
-
     return TextStyle(
       decoration: TextDecoration.lineThrough,
       color: Colors.grey.shade400,
@@ -289,7 +287,6 @@ class _TodoListIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final textScaleFactor =
         context.read<EditorState>().editorStyle.textScaleFactor;
-
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(

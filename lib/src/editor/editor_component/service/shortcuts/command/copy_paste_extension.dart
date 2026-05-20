@@ -66,7 +66,6 @@ extension EditorCopyPaste on EditorState {
     if (startWithNonDeltaBlock) {
       transaction.insertNodes(node.path.next, nodes);
       await apply(transaction);
-
       return;
     }
 
@@ -134,7 +133,6 @@ extension EditorCopyPaste on EditorState {
 
     // fetch selection again.selection = editorState.selection;
     assert(this.selection?.isCollapsed == true);
-
     return this.selection;
   }
 
@@ -150,7 +148,6 @@ extension EditorCopyPaste on EditorState {
         ...calculatePath([0], nodes.last.children.toList()),
       ];
     }
-
     return path;
   }
 
@@ -158,7 +155,6 @@ extension EditorCopyPaste on EditorState {
     if (nodes.last.children.isNotEmpty) {
       return calculateLength(nodes.last.children.toList());
     }
-
     return nodes.last.delta?.length ?? 0;
   }
 }

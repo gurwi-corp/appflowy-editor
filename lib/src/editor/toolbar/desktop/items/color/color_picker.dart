@@ -45,13 +45,6 @@ class _ColorPickerState extends State<ColorPicker> {
   }
 
   @override
-  void dispose() {
-    _colorHexController.dispose();
-    _colorOpacityController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return basicOverlay(
       context,
@@ -140,13 +133,11 @@ class _ColorPickerState extends State<ColorPicker> {
     if (colorHex == null) return null;
     final opacityHex = colorHex.substring(2, 4);
     final opacity = int.parse(opacityHex, radix: 16) / 2.55;
-
     return opacity.toStringAsFixed(0);
   }
 
   String? _extractColorHex(String? colorHex) {
     if (colorHex == null) return null;
-
     return colorHex.substring(4);
   }
 }
@@ -189,7 +180,6 @@ class ResetColorButton extends StatelessWidget {
               if (states.contains(WidgetState.hovered)) {
                 return Theme.of(context).hoverColor;
               }
-
               return Colors.transparent;
             },
           ),
@@ -305,7 +295,6 @@ class _CustomColorItemState extends State<CustomColorItem> {
     colorHex = _fixColorHex(colorHex);
     opacity = _fixOpacity(opacity);
     final opacityHex = (int.parse(opacity) * 2.55).round().toRadixString(16);
-
     return '0x$opacityHex$colorHex';
   }
 
@@ -316,7 +305,6 @@ class _CustomColorItemState extends State<CustomColorItem> {
     if (int.tryParse(colorHex, radix: 16) == null) {
       colorHex = 'FFFFFF';
     }
-
     return colorHex;
   }
 

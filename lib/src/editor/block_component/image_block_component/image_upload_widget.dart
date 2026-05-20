@@ -129,7 +129,6 @@ class _UploadImageMenuState extends State<UploadImageMenu> {
   @override
   void dispose() {
     _focusNode.dispose();
-    _textEditingController.dispose();
     super.dispose();
   }
 

@@ -15,7 +15,6 @@ void main() async {
           case TransactionTime.before:
             expect(editorState.getNodeAtPath([0]), null);
             break;
-
           case TransactionTime.after:
             expect(
               editorState.getNodeAtPath([0])!.type,

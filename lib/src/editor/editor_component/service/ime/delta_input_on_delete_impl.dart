@@ -36,7 +36,6 @@ Future<void> onDelete(
         ..deleteText(node, start, length)
         ..afterSelection = afterSelection;
       await editorState.apply(transaction);
-
       return;
     }
   }

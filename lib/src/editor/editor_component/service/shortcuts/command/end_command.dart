@@ -25,6 +25,5 @@ CommandShortcutEventHandler _endCommandHandler = (editorState) {
     scrollService.maxScrollExtent,
     duration: const Duration(milliseconds: 150),
   );
-
   return KeyEventResult.handled;
 };

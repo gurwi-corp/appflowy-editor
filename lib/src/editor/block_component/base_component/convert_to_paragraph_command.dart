@@ -57,6 +57,5 @@ CommandShortcutEventHandler _convertToParagraphCommandHandler = (editorState) {
     ..deleteNode(node)
     ..afterSelection = transaction.beforeSelection;
   editorState.apply(transaction);
-
   return KeyEventResult.handled;
 };

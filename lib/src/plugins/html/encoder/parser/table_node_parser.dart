@@ -62,7 +62,6 @@ class HtmlTableNodeParser extends HTMLNodeParser {
 
     final element =
         wrapChildrenNodesWithTagName(HTMLTags.table, childNodes: domNodes);
-
     return [
       element,
     ];

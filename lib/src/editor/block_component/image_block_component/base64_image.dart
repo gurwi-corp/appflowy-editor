@@ -21,6 +21,5 @@ String base64String(Uint8List data) {
 Future<String> base64StringFromImage(String imagePath) async {
   final file = File(imagePath); //convert Path to File
   final imageBytes = await file.readAsBytes(); //convert to bytes
-
   return base64.encode(imageBytes);
 }

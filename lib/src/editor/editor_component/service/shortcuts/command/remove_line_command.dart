@@ -36,6 +36,5 @@ CommandShortcutEventHandler _deleteLeftSentenceCommandHandler = (editorState) {
     selection.endIndex,
   );
   editorState.apply(transaction);
-
   return KeyEventResult.handled;
 };

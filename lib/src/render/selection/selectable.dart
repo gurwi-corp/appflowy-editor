@@ -98,7 +98,6 @@ mixin SelectableMixin<T extends StatefulWidget> on State<T> {
       r.topLeft,
       shiftWithBaseOffset: shiftWithBaseOffset,
     );
-
     return Rect.fromLTWH(topLeft.dx, topLeft.dy, r.width, r.height);
   }
 

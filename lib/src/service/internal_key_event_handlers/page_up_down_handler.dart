@@ -7,7 +7,6 @@ ShortcutEventHandler pageUpHandler = (editorState, _) {
   if (scrollHeight != null && scrollService != null) {
     scrollService.scrollTo(scrollService.dy - scrollHeight);
   }
-
   return KeyEventResult.handled;
 };
 
@@ -17,6 +16,5 @@ ShortcutEventHandler pageDownHandler = (editorState, _) {
   if (scrollHeight != null && scrollService != null) {
     scrollService.scrollTo(scrollService.dy + scrollHeight);
   }
-
   return KeyEventResult.handled;
 };

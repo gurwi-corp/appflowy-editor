@@ -61,7 +61,6 @@ class NonDeltaTextInputService extends TextInputService with TextInputClient {
         if (!(await onNonTextUpdate(delta))) willApply = false;
       }
     }
-
     return willApply;
   }
 
@@ -110,7 +109,6 @@ class NonDeltaTextInputService extends TextInputService with TextInputClient {
       AppFlowyEditorLog.editor.debug(
         'ignore updateEditingValue event when the floating cursor is visible',
       );
-
       return;
     }
 
@@ -165,7 +163,6 @@ class NonDeltaTextInputService extends TextInputService with TextInputClient {
   @override
   Future<void> performAction(TextInputAction action) async {
     AppFlowyEditorLog.editor.debug('performAction: $action');
-
     return onPerformAction(action);
   }
 
@@ -189,11 +186,9 @@ class NonDeltaTextInputService extends TextInputService with TextInputClient {
       case FloatingCursorDragState.Start:
         _isFloatingCursorVisible = true;
         break;
-
       case FloatingCursorDragState.Update:
         _isFloatingCursorVisible = true;
         break;
-
       case FloatingCursorDragState.End:
         _isFloatingCursorVisible = false;
         break;
@@ -290,7 +285,6 @@ extension on TextEditingValue {
         selection.extentOffset > text.length) {
       return false;
     }
-
     return true;
   }
 
@@ -342,7 +336,6 @@ extension on TextEditingDelta {
 extension TextEditingDeltaInsertionExtension on TextEditingDeltaInsertion {
   TextEditingDeltaInsertion format() {
     final startWithSpace = oldText.startsWith(_whitespace);
-
     return TextEditingDeltaInsertion(
       oldText: startWithSpace ? oldText << _len : oldText,
       textInserted: textInserted,
@@ -412,7 +405,6 @@ extension on String {
     if (shiftAmount > length) {
       return '';
     }
-
     return substring(shiftAmount);
   }
 }

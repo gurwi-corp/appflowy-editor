@@ -22,7 +22,6 @@ Node quoteNode({
   Iterable<Node>? children,
 }) {
   attributes ??= {'delta': (delta ?? Delta()).toJson()};
-
   return Node(
     type: QuoteBlockKeys.type,
     attributes: {
@@ -44,7 +43,6 @@ class QuoteBlockComponentBuilder extends BlockComponentBuilder {
   @override
   BlockComponentWidget build(BlockComponentContext blockComponentContext) {
     final node = blockComponentContext.node;
-
     return QuoteBlockComponentWidget(
       key: node.key,
       node: node,
@@ -196,7 +194,6 @@ class _QuoteIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final textScaleFactor =
         context.read<EditorState>().editorStyle.textScaleFactor;
-
     return Container(
       alignment: Alignment.center,
       constraints:

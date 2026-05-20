@@ -30,7 +30,6 @@ class NodeIterator implements Iterator<Node> {
     if (!_began) {
       _currentNode = startNode;
       _began = true;
-
       return true;
     }
 
@@ -41,7 +40,6 @@ class NodeIterator implements Iterator<Node> {
 
     if (endNode != null && endNode == node) {
       _currentNode = null;
-
       return false;
     }
 
@@ -51,7 +49,6 @@ class NodeIterator implements Iterator<Node> {
       _currentNode = node.next!;
     } else if (node.parent == null) {
       _currentNode = null;
-
       return false;
     } else {
       while (node.parent != null) {
@@ -77,7 +74,6 @@ class NodeIterator implements Iterator<Node> {
     while (moveNext()) {
       result.add(current);
     }
-
     return result;
   }
 }

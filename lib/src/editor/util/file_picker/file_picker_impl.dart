@@ -30,7 +30,6 @@ class FilePicker implements FilePickerService {
       withReadStream: withReadStream,
       lockParentWindow: lockParentWindow,
     );
-
     return FilePickerResult(result?.files ?? []);
   }
 

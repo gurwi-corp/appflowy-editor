@@ -65,7 +65,6 @@ class _BackgroundColorOptionsWidgetsState
                     e.colorHex,
               );
             });
-
             return ColorButton(
               isBackgroundColor: true,
               colorOption: e,

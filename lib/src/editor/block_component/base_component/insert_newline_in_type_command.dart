@@ -29,7 +29,6 @@ Future<bool> insertNewLineInType(
     if (node != null && node.path.length > 1) {
       return KeyEventResult.ignored != outdentCommand.execute(editorState);
     }
-
     return KeyEventResult.ignored !=
         convertToParagraphCommand.execute(editorState);
   }
@@ -43,6 +42,5 @@ Future<bool> insertNewLineInType(
       },
     ),
   );
-
   return true;
 }

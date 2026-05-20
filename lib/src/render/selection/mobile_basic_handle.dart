@@ -22,13 +22,10 @@ enum HandleType {
     switch (this) {
       case HandleType.none:
         throw UnsupportedError('Unsupported handle type');
-
       case HandleType.left:
         return MobileSelectionDragMode.leftSelectionHandle;
-
       case HandleType.right:
         return MobileSelectionDragMode.rightSelectionHandle;
-
       case HandleType.collapsed:
         return MobileSelectionDragMode.cursor;
     }
@@ -38,13 +35,10 @@ enum HandleType {
     switch (this) {
       case HandleType.none:
         throw UnsupportedError('Unsupported handle type');
-
       case HandleType.left:
         return CrossAxisAlignment.end;
-
       case HandleType.right:
         return CrossAxisAlignment.start;
-
       case HandleType.collapsed:
         return CrossAxisAlignment.center;
     }
@@ -54,13 +48,10 @@ enum HandleType {
     switch (this) {
       case HandleType.none:
         throw UnsupportedError('Unsupported handle type');
-
       case HandleType.left:
         return _leftHandleKey;
-
       case HandleType.right:
         return _rightHandleKey;
-
       case HandleType.collapsed:
         return _collapsedHandleKey;
     }

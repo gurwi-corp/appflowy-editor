@@ -104,7 +104,6 @@ extension on EditorState {
     } else {
       await pasteMultiLineNodes(nodes.toList());
     }
-
     return true;
   }
 
@@ -162,7 +161,6 @@ extension on EditorState {
           } else {
             delta.insert(paragraph, attributes: selectionAttributes);
           }
-
           return delta;
         })
         .map((paragraph) => paragraphNode(delta: paragraph))
@@ -198,7 +196,6 @@ extension on EditorState {
       AppFlowyRichTextKeys.href: isPhone ? 'tel:$plainText' : plainText,
     });
     await apply(transaction);
-
     return true;
   }
 }

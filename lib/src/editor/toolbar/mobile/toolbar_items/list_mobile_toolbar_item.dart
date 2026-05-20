@@ -11,7 +11,6 @@ final listMobileToolbarItem = MobileToolbarItem.withMenu(
     if (selection == null) {
       return const SizedBox.shrink();
     }
-
     return _ListMenu(editorState, selection);
   },
 );
@@ -42,7 +41,6 @@ class _ListMenuState extends State<_ListMenu> {
       name: 'numbered_list',
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     final btnList = lists.map((currentList) {

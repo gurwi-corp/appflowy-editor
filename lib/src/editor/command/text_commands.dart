@@ -315,10 +315,8 @@ extension TextTransforms on EditorState {
     node ??= getNodeAtPath(path!);
     if (node == null) {
       assert(false, 'node is null');
-
       return;
     }
-
     return apply(
       transaction..insertText(node, index, text),
     );
@@ -329,7 +327,6 @@ extension TextTransforms on EditorState {
     if (selection == null || !selection.isCollapsed) {
       return;
     }
-
     return insertText(
       selection.startIndex,
       text,
@@ -359,7 +356,6 @@ extension TextTransforms on EditorState {
       final endIndex = node == nodes.last ? selection.endIndex : delta.length;
       res.add(delta.slice(startIndex, endIndex).toPlainText());
     }
-
     return res;
   }
 
@@ -400,7 +396,6 @@ extension TextTransforms on EditorState {
       }
       start += length;
     }
-
     return null;
   }
 

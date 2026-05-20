@@ -35,7 +35,6 @@ class HTMLTextNodeParser extends HTMLNodeParser {
     }
     final element =
         wrapChildrenNodesWithTagName(HTMLTags.paragraph, childNodes: domNodes);
-
     return [element];
   }
 }

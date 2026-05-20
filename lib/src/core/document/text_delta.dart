@@ -131,7 +131,6 @@ class TextInsert extends TextOperation {
     if (_attributes != null && _attributes.isNotEmpty) {
       result['attributes'] = attributes;
     }
-
     return result;
   }
 
@@ -169,7 +168,6 @@ class TextRetain extends TextOperation {
     if (_attributes != null && _attributes.isNotEmpty) {
       result['attributes'] = attributes;
     }
-
     return result;
   }
 
@@ -258,13 +256,11 @@ class Delta extends Iterable<TextOperation> {
       final lastOp = _operations.last;
       if (lastOp is TextDelete && textOperation is TextDelete) {
         lastOp.length += textOperation.length;
-
         return;
       }
       if (_mapEquals(lastOp.attributes, textOperation.attributes)) {
         if (lastOp is TextInsert && textOperation is TextInsert) {
           lastOp.text += textOperation.text;
-
           return;
         }
         // if there is an delete before the insert
@@ -273,12 +269,10 @@ class Delta extends Iterable<TextOperation> {
           _operations.removeLast();
           _operations.add(textOperation);
           _operations.add(lastOp);
-
           return;
         }
         if (lastOp is TextRetain && textOperation is TextRetain) {
           lastOp.length += textOperation.length;
-
           return;
         }
       }
@@ -393,7 +387,6 @@ class Delta extends Iterable<TextOperation> {
               delta._operations.isNotEmpty &&
               delta._operations.last == newOp) {
             final rest = Delta(operations: thisIter.rest());
-
             return (delta + rest)..chop();
           }
         } else if (otherOp is TextDelete && (thisOp is TextRetain)) {
@@ -416,10 +409,8 @@ class Delta extends Iterable<TextOperation> {
           return op.text;
         }
         assert(false, 'diff() called with non-insert operations');
-
         return '';
       }).join();
-
       return text;
     }).toList();
 
@@ -439,13 +430,11 @@ class Delta extends Iterable<TextOperation> {
             opLength = min(otherIter.peekLength(), length);
             retDelta.add(otherIter.next(opLength));
             break;
-
           case diff_match_patch.DIFF_DELETE:
             opLength = min(length, thisIter.peekLength());
             thisIter.next(opLength);
             retDelta.delete(opLength);
             break;
-
           case diff_match_patch.DIFF_EQUAL:
             opLength = min(
               min(thisIter.peekLength(), otherIter.peekLength()),
@@ -471,7 +460,6 @@ class Delta extends Iterable<TextOperation> {
         length -= opLength;
       }
     }
-
     return retDelta..trim();
   }
 
@@ -492,7 +480,6 @@ class Delta extends Iterable<TextOperation> {
       operations.add(other._operations[0]);
       operations.addAll(other._operations.sublist(1));
     }
-
     return Delta(operations: operations);
   }
 
@@ -512,7 +499,6 @@ class Delta extends Iterable<TextOperation> {
     if (other is! Delta) {
       return false;
     }
-
     return listEquals(_operations, other._operations);
   }
 
@@ -529,7 +515,6 @@ class Delta extends Iterable<TextOperation> {
         inverted.delete(op.length);
       } else if (op is TextRetain && op.attributes == null) {
         inverted.retain(op.length);
-
         return previousValue + op.length;
       } else if (op is TextDelete || op is TextRetain) {
         final length = op.length;
@@ -544,13 +529,10 @@ class Delta extends Iterable<TextOperation> {
             );
           }
         }
-
         return previousValue + length;
       }
-
       return previousValue;
     });
-
     return inverted..chop();
   }
 
@@ -572,7 +554,6 @@ class Delta extends Iterable<TextOperation> {
     final content = toPlainText();
     final boundary = CharacterBoundary(content);
     final index = boundary.getLeadingTextBoundaryAt(pos - 1);
-
     return index ?? 0;
   }
 
@@ -590,14 +571,12 @@ class Delta extends Iterable<TextOperation> {
     }
     final boundary = CharacterBoundary(content);
     final index = boundary.getTrailingTextBoundaryAt(pos);
-
     return index ?? content.length;
   }
 
   String toPlainText() {
     _plainText ??=
         _operations.whereType<TextInsert>().map((op) => op.text).join();
-
     return _plainText!;
   }
 
@@ -655,10 +634,8 @@ class _OpIterator {
   int peekLength() {
     if (_index < _operations.length) {
       final op = _operations[_index];
-
       return op.length - _offset;
     }
-
     return _maxInt;
   }
 
@@ -684,10 +661,8 @@ class _OpIterator {
     switch (nextOp) {
       case TextDelete _:
         return TextDelete(length: length);
-
       case TextRetain _:
         return TextRetain(length, attributes: nextOp.attributes);
-
       case TextInsert _:
         return TextInsert(
           nextOp.text.substring(offset, offset + length),
@@ -708,7 +683,6 @@ class _OpIterator {
       final rest = _operations.sublist(_index);
       _offset = offset;
       _index = index;
-
       return [next] + rest;
     }
   }
@@ -718,6 +692,5 @@ bool _mapEquals<T, U>(Map<T, U>? a, Map<T, U>? b) {
   if ((a == null || a.isEmpty) && (b == null || b.isEmpty)) {
     return true;
   }
-
   return mapEquals(a, b);
 }

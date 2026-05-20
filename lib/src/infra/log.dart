@@ -35,7 +35,6 @@ class AppFlowyLogConfiguration {
   AppFlowyEditorLogLevel _level = AppFlowyEditorLogLevel.off;
 
   AppFlowyEditorLogLevel get level => _level;
-
   set level(AppFlowyEditorLogLevel level) {
     _level = level;
     Logger.root.level = level.toLevel();
@@ -88,11 +87,8 @@ class AppFlowyEditorLog {
   static AppFlowyEditorLog ui = AppFlowyEditorLog._(name: 'ui');
 
   void error(String message) => _logger.severe(message);
-
   void warn(String message) => _logger.warning(message);
-
   void info(String message) => _logger.info(message);
-
   void debug(String message) => _logger.fine(message);
 }
 
@@ -101,19 +97,14 @@ extension on AppFlowyEditorLogLevel {
     switch (this) {
       case AppFlowyEditorLogLevel.off:
         return Level.OFF;
-
       case AppFlowyEditorLogLevel.error:
         return Level.SEVERE;
-
       case AppFlowyEditorLogLevel.warn:
         return Level.WARNING;
-
       case AppFlowyEditorLogLevel.info:
         return Level.INFO;
-
       case AppFlowyEditorLogLevel.debug:
         return Level.FINE;
-
       case AppFlowyEditorLogLevel.all:
         return Level.ALL;
     }
@@ -123,19 +114,14 @@ extension on AppFlowyEditorLogLevel {
     switch (this) {
       case AppFlowyEditorLogLevel.off:
         return 'OFF';
-
       case AppFlowyEditorLogLevel.error:
         return 'ERROR';
-
       case AppFlowyEditorLogLevel.warn:
         return 'WARN';
-
       case AppFlowyEditorLogLevel.info:
         return 'INFO';
-
       case AppFlowyEditorLogLevel.debug:
         return 'DEBUG';
-
       case AppFlowyEditorLogLevel.all:
         return 'ALL';
     }
@@ -153,7 +139,6 @@ extension on Level {
     } else if (this == Level.FINE) {
       return AppFlowyEditorLogLevel.debug;
     }
-
     return AppFlowyEditorLogLevel.off;
   }
 }

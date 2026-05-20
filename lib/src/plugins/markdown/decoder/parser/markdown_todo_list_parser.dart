@@ -38,7 +38,6 @@ class MarkdownTodoListParserV2 extends CustomMarkdownParser {
     }
 
     final deltaDecoder = DeltaMarkdownDecoder();
-
     return [
       todoListNode(
         checked: checked,

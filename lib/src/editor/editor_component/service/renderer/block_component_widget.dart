@@ -107,7 +107,6 @@ mixin NestedBlockComponentStatefulWidgetMixin<
         );
       }
     }
-
     return configuration.indentPadding(node, direction);
   }
 

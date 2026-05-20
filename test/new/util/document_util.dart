@@ -48,10 +48,8 @@ extension DocumentExtension on Document {
       node.updateAttributes({
         'delta': builder0(index).toJson(),
       });
-
       return node;
     });
-
     return this
       ..insert(
         [root.children.length],
