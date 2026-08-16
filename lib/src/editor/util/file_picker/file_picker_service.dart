@@ -23,9 +23,6 @@ abstract class FilePickerService {
     List<String>? allowedExtensions,
     Function(FilePickerStatus)? onFileLoading,
     bool allowMultiple = false,
-    bool withData = false,
-    bool withReadStream = false,
-    bool lockParentWindow = false,
   }) async =>
       throw UnimplementedError('pickFiles() has not been implemented.');
 
@@ -36,7 +33,6 @@ abstract class FilePickerService {
     FileType type = FileType.any,
     List<String>? allowedExtensions,
     required Uint8List bytes,
-    bool lockParentWindow = false,
   }) async =>
       throw UnimplementedError('saveFile() has not been implemented.');
 }
